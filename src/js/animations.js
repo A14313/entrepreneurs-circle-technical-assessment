@@ -96,3 +96,9 @@ openBtns.forEach((el) => {
 closebtn.addEventListener('click', () => {
 	modalTl.reverse();
 });
+
+// SVG Character
+gsap.set('#RIGHT', { x: '-10%' });
+gsap.to('#RIGHT', { transformOrigin: 'bottom', rotation: 10, repeat: -1, yoyo: true, yoyoEase: 'power2', duration: 0.8 });
+gsap.to('#HEAD', { transformOrigin: 'bottom center', rotation: 5, repeat: -1, yoyo: true, yoyoEase: 'power2', duration: 1 });
+gsap.to('#HOOD', { transformOrigin: 'bottom center', rotation: 5, repeat: -1, yoyo: true, yoyoEase: 'power2', duration: 1 });

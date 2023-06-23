@@ -23,7 +23,7 @@ entrepreneurs-circle-technical-assessment
 
 ### Links
 
--   [Live Site URL]()
+-   [Live Site URL](https://a14313.github.io/entrepreneurs-circle-technical-assessment/dist)
 
 ## Author
 

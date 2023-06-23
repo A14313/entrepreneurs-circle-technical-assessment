@@ -26,9 +26,21 @@ body {
 
 .header__bottom {
 	background-color: var(--clr-primary);
+	padding-block: 0.5em;
+
+	@include mediaQuery(sm2) {
+		padding-block: 1em;
+	}
 
 	p {
 		color: white;
+
+		@include mediaQuery(sm2) {
+			font-size: var(--fs-200);
+		}
+		@include mediaQuery(lrg) {
+			font-size: var(--fs-300);
+		}
 	}
 }
 
@@ -393,6 +405,10 @@ body {
 		img {
 			width: 100%;
 			max-width: 200px;
+
+			@include mediaQuery(med) {
+				max-width: 250px;
+			}
 		}
 	}
 
@@ -450,7 +466,13 @@ body {
 		align-items: center;
 		gap: 1.6em;
 
-		& svg {
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		svg {
 			width: 35px;
 			height: 35px;
 		}

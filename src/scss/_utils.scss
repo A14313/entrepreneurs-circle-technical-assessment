@@ -1,0 +1,244 @@
+.container {
+	width: 95%;
+	max-width: 1000px;
+	margin-inline: auto;
+
+	@include mediaQuery(sm1) {
+		width: 90%;
+	}
+
+	@include mediaQuery(sm2) {
+		width: 86%;
+	}
+}
+
+.btn {
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+	&--icon-only {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&--hollow {
+		text-align: center;
+		text-decoration: none;
+		font-weight: 600;
+		color: var(--clr-primary);
+		border: 1px solid var(--clr-primary);
+		display: inline-block;
+		border-radius: var(--border-radius-500);
+		padding: 0.5em 1.3em;
+		position: relative;
+		transition: background-color var(--transition-speed-normal) var(--transition-timing-function-cubic), color var(--transition-speed-normal) var(--transition-timing-function-cubic);
+		overflow: hidden;
+		isolation: isolate;
+
+		&:hover {
+			background-color: var(--clr-btn-hover);
+			color: var(--clr-primary);
+		}
+
+		&:hover:before {
+			transform: translateY(0%) scale(1.6);
+		}
+
+		&:hover:after {
+			transform: translateY(0%) scale(1.6);
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			inset: 0;
+			border-radius: 50%;
+			transition: transform var(--transition-speed-normal) var(--transition-timing-function-cubic);
+			z-index: -1;
+		}
+
+		&::before {
+			background-color: var(--clr-gray-400);
+			transform: translateY(140%) scale(1.6);
+		}
+
+		&::after {
+			background-color: var(--clr-btn-hover);
+			transform: translateY(160%) scale(1.6);
+			transition-delay: 50ms;
+		}
+	}
+
+	&--solid {
+		text-align: center;
+		text-decoration: none;
+		font-weight: 600;
+		color: white;
+
+		background-color: var(--clr-primary);
+		display: inline-block;
+		border-radius: var(--border-radius-500);
+		padding: 0.5em 1.3em;
+		position: relative;
+		transition: background-color var(--transition-speed-normal) var(--transition-timing-function-cubic), color var(--transition-speed-normal) var(--transition-timing-function-cubic);
+		overflow: hidden;
+		isolation: isolate;
+
+		&:hover {
+			background-color: var(--clr-btn-hover);
+			color: var(--clr-primary);
+		}
+
+		&:hover:before {
+			transform: translateY(0%) scale(1.6);
+		}
+
+		&:hover:after {
+			transform: translateY(0%) scale(1.6);
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			inset: 0;
+			border-radius: 50%;
+			transition: transform var(--transition-speed-normal) var(--transition-timing-function-cubic);
+			z-index: -1;
+		}
+
+		&::before {
+			background-color: var(--clr-gray-400);
+			transform: translateY(140%) scale(1.6);
+		}
+
+		&::after {
+			background-color: var(--clr-btn-hover);
+			transform: translateY(160%) scale(1.6);
+			transition-delay: 50ms;
+		}
+	}
+}
+
+em {
+	font-style: normal;
+	color: var(--clr-accent);
+}
+.section__title {
+	color: var(--clr-primary);
+	line-height: 1.2;
+
+	@include mediaQuery(sm2) {
+		font-size: var(--fs-600);
+	}
+}
+
+.section__text {
+	color: var(--clr-text-400);
+	line-height: 1.8;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+	visibility: hidden;
+
+	// isolation: isolate;
+
+	&::before {
+		content: '';
+		backdrop-filter: blur(10px);
+		background-color: rgba(255, 255, 255, 0.7);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		transform: scale(3);
+	}
+
+	&__contents-container {
+		background-color: var(--clr-secondary);
+		display: grid;
+		place-items: center;
+		gap: 2em;
+		padding-block: 2em;
+		padding-inline: 1em;
+		border-radius: var(--border-radius-300);
+		position: relative;
+
+		@include mediaQuery(sm1) {
+			padding: 3em;
+		}
+
+		@include mediaQuery(med) {
+			padding: 4em;
+		}
+	}
+
+	.close-container {
+		position: absolute;
+		top: 5%;
+		right: 5%;
+	}
+
+	.close-icon {
+		width: 30px;
+		height: 30px;
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		gap: 1em;
+	}
+
+	.one-column {
+		@include mediaQuery(sm2) {
+			width: 100%;
+
+			& input {
+				width: 100%;
+			}
+		}
+	}
+
+	.two-column {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		gap: 1em;
+
+		@include mediaQuery(sm2) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	.input-container {
+		background-color: white;
+		border-radius: var(--border-radius-500);
+		padding: 0.5em 1em;
+
+		& input {
+			background: none;
+			outline: none;
+			border: none;
+			color: var(--clr-primary);
+		}
+	}
+}

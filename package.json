@@ -1,0 +1,17 @@
+{
+	"name": "entrepreneurs-circle-technical-assessment",
+	"version": "1.0.0",
+	"description": "entrepreneurs-circle-technical-assessment",
+	"scripts": {
+		"start": "rm -rf dist/* && npm install && parcel src/*.html --open",
+		"build": "rm -rf dist/* && parcel build src/*.html --public-url ./ && rm -rf node_modules"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.9.2",
+		"parcel": "^2.9.2",
+		"sass": "^1.63.6"
+	}
+}
